@@ -1,13 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import FloatingObject from "@/components/FloatingObject";
-
-const Croissant3D = dynamic(() => import("@/components/Croissant3D"), {
-  ssr: false,
-});
+import PastryIcon from "@/components/PastryIcon";
 
 export default function Hero() {
   const root = useRef<HTMLDivElement>(null);
@@ -70,8 +66,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-scene relative mx-auto h-[380px] w-full max-w-md md:h-[520px]">
-          <Croissant3D />
+        <div className="hero-scene relative mx-auto flex h-[380px] w-full max-w-md items-center justify-center md:h-[520px]">
+          <div className="absolute h-64 w-64 rounded-full bg-caramel/25 blur-3xl md:h-80 md:w-80" />
+          <div
+            className="liquid-glass relative flex h-72 w-72 items-center justify-center rounded-full md:h-96 md:w-96"
+            style={{ animation: "drift 9s ease-in-out infinite" }}
+          >
+            <PastryIcon name="croissant" className="h-36 w-36 text-caramel md:h-48 md:w-48" />
+          </div>
         </div>
       </div>
 
