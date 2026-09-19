@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 import { CartProvider } from "@/lib/cart";
 
 const fraunces = Fraunces({
@@ -43,10 +42,7 @@ export default function RootLayout({
     <html lang="en" className={`${fraunces.variable} ${manrope.variable}`}>
       <body className="bg-cream text-espresso font-body antialiased selection:bg-caramel/30 selection:text-espresso">
         <CartProvider>
-          <SmoothScroll>
-            <CustomCursor />
-            {children}
-          </SmoothScroll>
+          <SmoothScroll>{children}</SmoothScroll>
         </CartProvider>
       </body>
     </html>

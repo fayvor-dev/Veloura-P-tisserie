@@ -20,16 +20,6 @@ html {
 
 body {
   overflow-x: clip;
-  cursor: none;
-}
-
-@media (pointer: coarse), (max-width: 767px) {
-  body {
-    cursor: auto;
-  }
-  .veloura-cursor {
-    display: none;
-  }
 }
 
 ::selection {
@@ -110,30 +100,6 @@ body {
   box-shadow:
     0 1px 1px rgba(255, 255, 255, 0.12) inset,
     0 12px 44px rgba(0, 0, 0, 0.5);
-}
-
-/* ---------- Custom cursor ---------- */
-.veloura-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  margin: -7px 0 0 -7px;
-  border-radius: 999px;
-  background: rgba(74, 44, 30, 0.85);
-  pointer-events: none;
-  z-index: 9999;
-  will-change: transform;
-  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease, background 0.25s ease, opacity 0.2s ease;
-}
-
-.veloura-cursor.is-hovering {
-  width: 42px;
-  height: 42px;
-  margin: -21px 0 0 -21px;
-  background: rgba(74, 44, 30, 0.12);
-  border: 1px solid rgba(74, 44, 30, 0.5);
 }
 
 /* ---------- Utilities ---------- */
